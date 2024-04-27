@@ -1,0 +1,33 @@
+.mejorando {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+  
+  .left-column {
+    width: 40%; 
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .right-column {
+    width: 60%; /* Ajusta el ancho según tus necesidades */
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .examp-ca {
+    max-width: 300px; 
+    margin: 0 auto; 
+    text-align: center;
+  }

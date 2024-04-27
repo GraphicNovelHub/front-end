@@ -1,0 +1,44 @@
+.fic-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row; /* Alinear horizontalmente */
+  padding: 20px;
+  margin: 20px;
+  height: auto;
+  max-height: 350px;
+
+}
+
+.fic-card-image {
+  margin-right: 16px; /* Espacio entre la imagen y el texto */
+  max-height: 300px;
+}
+
+.fic-card-text {
+  //flex: 1; /* El texto ocupará el espacio restante */
+}
+
+.fic-stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stats-view{
+  margin: 10px;
+}
+
+.fic-summary{
+  display: -webkit-box;
+  min-height: 100px;
+  max-height: 120px;
+  max-width: 450px;
+  min-width: 350px;
+  //border: 1px solid #ccc;
+}
+
+.fic-summary-text{
+  white-space: initial;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
