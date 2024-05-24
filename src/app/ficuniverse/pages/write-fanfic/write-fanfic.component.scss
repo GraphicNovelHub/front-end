@@ -1,3 +1,49 @@
 .working-page{
   text-align: center;
 }
+
+.container-wf{
+  max-width: 50%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ajusta esto según necesites más columnas */
+  grid-template-rows: auto auto; /* Dos filas */
+  gap: 20px; /* Espacio entre ítems */
+}
+
+.full-width_grid{
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .container-wf{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre ítems */
+  }
+}
+
+.alert {
+  position: fixed;
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    z-index: 1000; /* Asegura que flote sobre otros elementos */
+    width: 300px; /* Ancho fijo para todas las alertas */
+    padding: 10px;
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    opacity: 100; /* Inicialmente invisible */
+    transition: opacity 0.5s, bottom 0.5s; /* Transición suave */
+}
+
+.alert-success {
+  background-color: #4CAF50; /* Green */
+}
+
+.alert-error {
+  background-color: #f44336; /* Red */
+}

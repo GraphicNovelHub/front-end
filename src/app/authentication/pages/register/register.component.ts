@@ -21,7 +21,11 @@ export class RegisterComponent {
   nameFormControl = new FormControl('',[Validators.required])
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required])
-  constructor(private authService: AuthService, private _snackBar: MatSnackBar, private cookieService: CookieService,private router: Router )  {
+  constructor(
+    private authService: AuthService, 
+    private _snackBar: MatSnackBar, 
+    private cookieService: CookieService,
+    private router: Router )  {
   }
   doRegister(){
     let registerRequest: RegisterRequest;

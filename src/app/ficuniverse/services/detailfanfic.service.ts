@@ -11,7 +11,7 @@ export class DetailfanficService extends BaseService<Fanfic>{
 
     constructor(http: HttpClient, private httpClient: HttpClient) {
       super(http);
-      this.resourceEndpoint='/fanfics'
+      this.resourceEndpoint='/stores'
     }
 
 

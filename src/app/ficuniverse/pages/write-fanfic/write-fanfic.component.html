@@ -1,5 +1,42 @@
 <div class="working-page">
-  <h2>Here you'll be able to write a new fanfic</h2>
-  <h4> Still working on it </h4>
-  <button mat-button (click)="navigateToHome()">Home</button>
+  <h2>Create new store</h2>
+
+  <div class="container-wf">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [formControl]="author">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Lenguage</mat-label>
+      <input matInput [formControl]="lenguage">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" >
+      <mat-label>Thumbnail</mat-label>
+      <input matInput [formControl]="thumbnail">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput [formControl]="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width_grid">
+      <mat-label>Summary</mat-label>
+      <textarea matInput [formControl]="summary"></textarea>
+    </mat-form-field>
+
+    <button class="full-width_grid" mat-raised-button color="primary" (click)="sendValues()">Send</button>
+    
+    <div *ngIf="isLoading">
+      <p>Cargando...</p>
+    </div>
+  </div>
+  <div class="alert alert-error" *ngIf="httpState === 'fail'">
+    Something went wrong try again
+  </div>
+  <div class="alert alert-success" *ngIf="httpState === 'success'">
+    Store added succesfully
+  </div>
 </div>
