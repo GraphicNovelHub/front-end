@@ -1,75 +1,89 @@
 <div class="details-fan">
-<div class="left-column">
-  <div class="example-button-row">
-    <span>
-        Add to your likes
-        <button mat-icon-button matTooltip="Add to favorites" aria-label="Add to favorites" (click)="addToFavorites()">
-          <mat-icon>favorite</mat-icon>
-        </button>
-    </span>
-  </div>
-
-  <div class="texge">
-    <p>Genres</p>
-    <ul>
-      <li *ngFor="let category of fanfic.categories">{{ category.name }}</li>
-    </ul>
-    <p>Description</p>
-  </div>
-
-  <mat-card class="example-card">
-
-    <mat-card-content>
-      <p>{{ fanfic.summary }}</p>
-    </mat-card-content>
-  </mat-card>
-</div>
-
-
-
-<div class="right-column">
-  <mat-card class="examp-ca" *ngIf="fanfic.thumbnail && fanfic.views">
-    <mat-card-content >
-
-      <div >
-        <img  src="{{ fanfic.thumbnail }}" alt="{{ fanfic.title }}">
-      </div>
-
-        <div class="correcion">
-          <mat-card-title>{{ fanfic.title }}</mat-card-title>
-        </div>
-
-
-        <div class="info-row">
-          <div  class="div statistic">
-            <p>Views </p>
-            <p>{{ fanfic.favorites }}</p>
-          </div>
-          <div  class="statistic">
-            <p>Favorites</p>
-            <p>{{ fanfic.favorites }}</p>
-          </div>
-          <div  class="statistic">
-            <p> Chapters</p>
-            <p>{{ fanfic.chapters ? fanfic.chapters.length : 0 }}</p>
-          </div>
-        </div>
-
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card *ngIf="fanfic.chapters && fanfic.chapters.length > 0" class="examp-ca">
-    <mat-card-content>
-      <h4 class="chapter-list-title">Chapter:</h4>
+  <div class="left-column">
+    <div class="example-button-row">
+      <span>
+          Add to your likes
+          <button mat-icon-button matTooltip="Add to favorites" aria-label="Add to favorites" (click)="addToFavorites()">
+            <mat-icon>favorite</mat-icon>
+          </button>
+      </span>
+    </div>
+  
+    <div class="texge">
+      <p>Genres</p>
       <ul>
-        <li *ngFor="let chapter of fanfic.chapters" class="chapter-item">
-          <a [routerLink]="['/reading', fanficId,chapter.id]">{{ chapter.title }}</a>
-        </li>
+        <li *ngFor="let category of fanfic.categories">{{ category.name }}</li>
       </ul>
-    </mat-card-content>
-  </mat-card>
-
-</div>
-
-
-</div>
+      <p>Description</p>
+    </div>
+  
+    <mat-card class="example-card">
+  
+      <mat-card-content>
+        <p>{{ fanfic.summary }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  
+  
+  <div class="right-column">
+    <mat-card class="examp-ca" *ngIf="fanfic.thumbnail">
+      <mat-card-content >
+  
+        <div >
+          <img class="header-img"  src="{{ fanfic.thumbnail }}" alt="{{ fanfic.title }}">
+        </div>
+  
+          <div class="correcion">
+            <mat-card-title>{{ fanfic.title }}</mat-card-title>
+          </div>
+  
+  
+          <div class="info-row">
+            <div  class="div statistic">
+              <p>Views </p>
+              <p>{{ fanfic.favorites }}</p>
+            </div>
+            <div  class="statistic">
+              <p>Favorites</p>
+              <p>{{ fanfic.favorites }}</p>
+            </div>
+            <div  class="statistic">
+              <p> Products</p>
+              <p>{{ fanfic.chapters ? fanfic.chapters.length : 0 }}</p>
+            </div>
+          </div>
+  
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card *ngIf="fanfic.chapters && fanfic.chapters.length > 0" class="examp-ca">
+      <mat-card-content>
+        <h4 class="chapter-list-title">Products:</h4>
+        <ul class="card-grid">
+          <li *ngFor="let chapter of fanfic.chapters" class="chapter-item">
+            <div class="card">
+              <div class="card-header">
+                <img [src]="chapter.image" class="card-img-top" alt="{{ chapter.title }}">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ chapter.title }}</h5>
+                <p class="card-text">{{ chapter.content }}</p>
+              </div>
+              <div class="card-footer">
+                <a class="card-button" [routerLink]="['/reading', fanficId,chapter.id]">
+                  More details
+                </a>
+              </div>
+            </div>       
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
+  
+  
+  </div>
+  
